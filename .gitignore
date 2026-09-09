@@ -1,0 +1,10 @@
+.claude/agents/
+.cursor/agents/
+.codex/agents/
+.agents/agents/
+__pycache__/
+*.py[cod]
+# Local secrets — never commit
+.env
+.env.*
+*.local

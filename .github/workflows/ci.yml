@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install pyyaml
+      - name: Generate and validate
+        env:
+          BLAZIUM_SKILLS_MARKETPLACE: https://raw.githubusercontent.com/blazium-games/blazium-skills/main/.claude-plugin/marketplace.json
+        run: |
+          python scripts/generate_agents.py
+          python scripts/validate_agents.py

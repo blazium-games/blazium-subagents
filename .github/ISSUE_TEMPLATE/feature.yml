@@ -1,0 +1,19 @@
+name: Agent request
+description: Propose a roster or mapping change
+title: "[agent] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: seat
+    attributes:
+      label: Seat
+      description: Existing agent to change, or why a new ops/studio seat is required.
+    validations:
+      required: true
+  - type: textarea
+    id: skills
+    attributes:
+      label: Skills
+      description: Published blazium-* skills from blazium-games/blazium-skills.
+    validations:
+      required: true

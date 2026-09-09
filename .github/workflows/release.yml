@@ -1,0 +1,109 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install pyyaml
+      - name: Generate and validate
+        env:
+          BLAZIUM_SKILLS_MARKETPLACE: https://raw.githubusercontent.com/blazium-games/blazium-skills/main/.claude-plugin/marketplace.json
+        run: |
+          python scripts/generate_agents.py
+          python scripts/validate_agents.py
+
+  pack-claude:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Zip Claude agents
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          STAGE="blazium-subagents-claude-${TAG}"
+          mkdir -p "${STAGE}"
+          cp -a agents mapping.yaml scripts templates README.md LICENSE GETTING-STARTED.md CONTRIBUTING.md SECURITY.md AGENTS.md "${STAGE}/"
+          mkdir -p "${STAGE}/.claude"
+          cp -a .claude/skills "${STAGE}/.claude/skills"
+          zip -r "${STAGE}.zip" "${STAGE}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: claude
+          path: blazium-subagents-claude-*.zip
+
+  pack-cursor:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Zip Cursor agents
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          STAGE="blazium-subagents-cursor-${TAG}"
+          mkdir -p "${STAGE}/.cursor/agents"
+          cp -a agents mapping.yaml scripts templates README.md LICENSE GETTING-STARTED.md CONTRIBUTING.md SECURITY.md AGENTS.md "${STAGE}/"
+          cp -a agents/. "${STAGE}/.cursor/agents/"
+          zip -r "${STAGE}.zip" "${STAGE}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cursor
+          path: blazium-subagents-cursor-*.zip
+
+  pack-codex:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Zip Codex agents
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          STAGE="blazium-subagents-codex-${TAG}"
+          mkdir -p "${STAGE}/.codex/agents" "${STAGE}/.agents/agents"
+          cp -a agents mapping.yaml scripts templates README.md LICENSE GETTING-STARTED.md CONTRIBUTING.md SECURITY.md AGENTS.md "${STAGE}/"
+          cp -a agents/. "${STAGE}/.codex/agents/"
+          cp -a agents/. "${STAGE}/.agents/agents/"
+          zip -r "${STAGE}.zip" "${STAGE}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: codex
+          path: blazium-subagents-codex-*.zip
+
+  publish:
+    needs: [pack-claude, pack-cursor, pack-codex]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          body: |
+            ## Install
+
+            Clone [blazium-games/blazium-subagents](https://github.com/blazium-games/blazium-subagents)
+            and run `python scripts/install_links.py`.
+
+            Load [blazium-skills](https://github.com/blazium-games/blazium-skills) so `skills:` resolve.
+
+            | Host | Agents |
+            |------|--------|
+            | Claude Code | `.claude/agents/` plus `.claude/skills/` (`/start`, `/help`, `/setup-blazium`) |
+            | Cursor | `.cursor/agents/` |
+            | Codex | `.codex/agents/` or `.agents/agents/` |
+          files: dist/*.zip

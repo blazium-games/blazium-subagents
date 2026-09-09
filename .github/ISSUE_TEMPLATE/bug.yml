@@ -1,0 +1,22 @@
+name: Bug
+description: Roster, mapping, or generated agent is wrong
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: input
+    id: agent
+    attributes:
+      label: Agent
+      description: Agent file name (for example blazium-orchestrator).
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual
+    validations:
+      required: true
