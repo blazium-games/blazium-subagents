@@ -4,7 +4,8 @@ A Blazium-only studio roster. **49 working seats** plus `blazium-orchestrator`
 and `blazium-ci-watcher`. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
 
 Install [blazium-skills](https://github.com/blazium-games/blazium-skills) first
-so listed skills resolve on Claude, Cursor, and Codex.
+so listed skills resolve on Claude, Cursor, Codex, and Grok. Grok host notes:
+[GROK.md](GROK.md).
 
 ```bash
 # Claude Code
@@ -18,6 +19,10 @@ codex plugin marketplace add blazium-games/blazium-skills
 Cursor: add `blazium-games/blazium-skills` as a marketplace, then install
 `blazium` or a topic pack.
 
+Grok: clone blazium-skills and this repo. Run `python scripts/install_links.py`
+so agents land in `.grok/agents/`. Skills load from the Claude marketplace or a
+`.grok/skills` symlink — see the skills repo GROK.md.
+
 ## Install agents
 
 ```bash
@@ -30,17 +35,20 @@ python scripts/validate_agents.py
 | Claude Code | `.claude/agents/` |
 | Cursor | `.cursor/agents/` |
 | Codex | `.codex/agents/` or `.agents/agents/` |
+| Grok | `.grok/agents/` |
 
-In a game repo, link or copy `agents/` to those paths.
+In a game repo, link or copy `agents/` to those paths. On Grok you can also
+paste one agent file as the specialist system prompt.
 
 ## First session
 
-1. Spawn `blazium-orchestrator` (Claude: `/start`).
+1. Spawn `blazium-orchestrator` (Claude: `/start`; Grok: load that agent file).
 2. Pick design / prototype / development.
 3. Development mode: `producer` + at most **two** more specialists.
 4. Each agent reads only the `blazium-*` skills in its frontmatter.
 
 Thin Claude commands: `/start`, `/help`, `/setup-blazium`.
+Grok ignores frontmatter `model: opus` / `sonnet` and uses the current Grok model.
 
 ## Four surfaces (never mix)
 
@@ -52,6 +60,7 @@ Thin Claude commands: `/start`, `/help`, `/setup-blazium`.
 | Hub remote | `:39218` | `blazium-hub-specialist` |
 
 After a ship push, producer may spawn `blazium-ci-watcher`. Gameplay
-evidence uses `blazium-verify`, not a screenshot.
+evidence uses `blazium-verify`, not a screenshot. Host Python and Grok
+`code_execution` are not evidence.
 
-See [AGENTS.md](AGENTS.md) and [CONTRIBUTING.md](CONTRIBUTING.md).
+See [AGENTS.md](AGENTS.md), [CONTRIBUTING.md](CONTRIBUTING.md), and [GROK.md](GROK.md).

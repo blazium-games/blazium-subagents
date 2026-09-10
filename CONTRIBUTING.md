@@ -5,6 +5,8 @@ Canonical agents live in [`mapping.yaml`](mapping.yaml). Do not hand-edit
 files. Verbs and APIs live in
 [blazium-skills](https://github.com/blazium-games/blazium-skills).
 
+Grok host notes: [GROK.md](GROK.md).
+
 ## Add or change an agent
 
 1. Edit the agent block in `mapping.yaml` (`skills`, `role`, `when_not`,
@@ -39,6 +41,7 @@ checkout of blazium-skills if present, then the published catalog on
 | Claude Code | `.claude/agents/` |
 | Cursor | `.cursor/agents/` |
 | Codex | `.codex/agents/` and `.agents/agents/` |
+| Grok | `.grok/agents/` |
 
 Copy those folders into a game repo the same way. Load blazium-skills so
-frontmatter `skills:` resolve.
+frontmatter `skills:` resolve. On Grok, ignore `model: opus` / `sonnet`.

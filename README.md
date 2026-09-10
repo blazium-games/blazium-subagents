@@ -3,7 +3,7 @@
 A Blazium-only studio roster. **49 working studio/engine agents** plus a
 routing **orchestrator** and **`blazium-ci-watcher`**.
 
-[GETTING-STARTED.md](GETTING-STARTED.md) · [CONTRIBUTING.md](CONTRIBUTING.md) · [AGENTS.md](AGENTS.md)
+[GETTING-STARTED.md](GETTING-STARTED.md) · [CONTRIBUTING.md](CONTRIBUTING.md) · [AGENTS.md](AGENTS.md) · [GROK.md](GROK.md)
 
 Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**. GDScript-first. Skills live in
 [blazium-skills](https://github.com/blazium-games/blazium-skills). Do not apply
@@ -18,6 +18,7 @@ Copy or link `agents/` into a game repo:
 .cursor/agents/   ← Cursor
 .codex/agents/    ← Codex
 .agents/agents/   ← Codex (plugins layout)
+.grok/agents/     ← Grok
 ```
 
 From this repository:
@@ -28,7 +29,8 @@ python scripts/validate_agents.py
 ```
 
 Install [blazium-skills](https://github.com/blazium-games/blazium-skills) as a
-marketplace so listed `skills:` resolve.
+marketplace so listed `skills:` resolve. Grok also auto-reads the Claude
+marketplace; see [GROK.md](GROK.md).
 
 ## How it works
 
@@ -53,3 +55,5 @@ Engine seats are Blazium specialists (`blazium-mcp-specialist`, `blazium-luau-sp
 | `/start` | Run the orchestrator |
 | `/help` | Print the roster |
 | `/setup-blazium` | Pin engine=`blazium` 0.6.x |
+
+On Grok, ignore frontmatter `model:` and paste one agent file as the specialist system prompt.
