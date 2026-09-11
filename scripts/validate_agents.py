@@ -15,7 +15,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 MAPPING = ROOT / "mapping.yaml"
-MAPPING_D = ROOT / "mapping.d"
+SHARDS = ROOT / "mapping.d"
 AGENTS = ROOT / "agents"
 DEFAULT_MARKET_URL = (
     "https://raw.githubusercontent.com/blazium-games/blazium-skills"
@@ -30,10 +30,12 @@ BANNED = re.compile(
 
 def load_mapping() -> dict:
     data = yaml.safe_load(MAPPING.read_text(encoding="utf-8"))
-    if MAPPING_D.is_dir():
-        for extra in sorted(MAPPING_D.glob("*.yaml")):
-            chunk = yaml.safe_load(extra.read_text(encoding="utf-8")) or {}
-            data.setdefault("agents", {}).update(chunk.get("agents") or {})
+    agents = dict(data.get("agents") or {})
+    if SHARDS.is_dir():
+        for shard in sorted(SHARDS.glob("*.yaml")):
+            extra = yaml.safe_load(shard.read_text(encoding="utf-8")) or {}
+            agents.update(extra.get("agents") or extra)
+    data["agents"] = agents
     return data
 
 
