@@ -50,6 +50,21 @@ and use the current Grok model.
 Child context is empty. The spawn prompt must include mode, fingerprints,
 skills to read, and the evidence required.
 
+## Systems and genre composition
+
+| Ask | Spawn | Skills |
+|-----|-------|--------|
+| Genre loop / pillars | `game-designer` | matching `blazium-genre-*` including `blazium-genre-idle` |
+| Formulas / matrices | `systems-designer` | same genre set + save/dialogue/feel |
+| Economy / prestige / BigNum | `economy-designer` | `blazium-genre-idle` + `blazium-clicker` |
+| CharacterBody / scenes | `gameplay-programmer` | `blazium-2d-movement`, `blazium-nodes-scenes` |
+
+Idle composition is `blazium-genre-idle`. BigNum-only math stays on
+`blazium-clicker`. Do not treat clicker as the whole idle game.
+
+After adding `blazium-genre-idle` to designer skill lists in `mapping.yaml`,
+regenerate agents. Do not hand-edit `agents/*.md`.
+
 ## Four surfaces (never mix)
 
 | Surface | Default | Owner |
