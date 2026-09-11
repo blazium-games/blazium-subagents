@@ -35,6 +35,8 @@ After spawn, read only:
 
 Skills own the verbs. Do not invent CLI commands or JustAMCP tools.
 
+Idle / incremental loops → `blazium-genre-idle`. BigNum-only clicker math → economy-designer + `blazium-clicker`.
+
 ## When not to use
 
 Movement math → gameplay-programmer. Live-ops events → live-ops-designer.
@@ -61,5 +63,3 @@ Ask → options → user decides → draft → approve. Wait for yes before writ
 | remote_control | `:6508/v1` | `tools-programmer` / `blazium-cli` skill |
 | Hub remote | `:39218` | `blazium-hub-specialist` |
 | Games cloud | `https://mcp.blazium.games/mcp` | `blazium-live-ops-specialist` |
-
-On Grok: ignore the `model:` field. Idle composition → `blazium-genre-idle`. BigNum-only → `blazium-clicker`. Evidence: Autowork / JustAMCP / CLI `--json` / `INCONCLUSIVE`.
