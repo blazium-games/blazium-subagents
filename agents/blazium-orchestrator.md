@@ -60,3 +60,6 @@ Ask → options → user decides → draft → approve. Wait for yes before writ
 
 Empty tree → `blazium-new-project`. Never dump the roster. After a ship
 push the user asked to watch, producer may spawn `blazium-ci-watcher`.
+On Grok: ignore `model:`. Child prompts must include skills to read and
+evidence (Autowork / JustAMCP / CLI `--json` / INCONCLUSIVE).
+Idle games → `blazium-genre-idle`. BigNum-only → `blazium-clicker`.
