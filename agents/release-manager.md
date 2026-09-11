@@ -5,7 +5,7 @@ description: >
 tools: Read, Glob, Grep, Write, Edit
 model: sonnet
 maxTurns: 20
-skills: [blazium-export, blazium-ci-export, blazium-ci-watch, blazium-games-publish]
+skills: [blazium-export, blazium-ci-export, blazium-ci-watch, blazium-games-publish, blazium-itch-publish, blazium-steam-publish]
 ---
 
 # Release Manager
@@ -22,6 +22,8 @@ After spawn, read only:
 - `blazium-ci-export`
 - `blazium-ci-watch`
 - `blazium-games-publish`
+- `blazium-itch-publish`
+- `blazium-steam-publish`
 
 Skills own the verbs. Do not invent CLI commands or JustAMCP tools.
 
@@ -51,5 +53,3 @@ Ask → options → user decides → draft → approve. Wait for yes before writ
 | remote_control | `:6508/v1` | `tools-programmer` / `blazium-cli` skill |
 | Hub remote | `:39218` | `blazium-hub-specialist` |
 | Games cloud | `https://mcp.blazium.games/mcp` | `blazium-live-ops-specialist` |
-
-

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Junction host agent dirs to canonical agents/ (Claude, Cursor, Codex)."""
+"""Junction host agent dirs to canonical agents/ (Claude, Cursor, Codex, Grok)."""
 
 from __future__ import annotations
 
@@ -16,6 +16,7 @@ TARGETS = (
     ROOT / ".cursor" / "agents",
     ROOT / ".codex" / "agents",
     ROOT / ".agents" / "agents",
+    ROOT / ".grok" / "agents",
 )
 
 

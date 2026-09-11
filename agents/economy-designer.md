@@ -5,7 +5,7 @@ description: >
 tools: Read, Glob, Grep, Write, Edit
 model: sonnet
 maxTurns: 20
-skills: [blazium-genre-card-game, blazium-clicker]
+skills: [blazium-genre-card-game, blazium-genre-idle, blazium-clicker]
 ---
 
 # Economy Designer
@@ -19,9 +19,12 @@ You own curves and loot tables that a programmer can put in Resources.
 After spawn, read only:
 
 - `blazium-genre-card-game`
+- `blazium-genre-idle`
 - `blazium-clicker`
 
 Skills own the verbs. Do not invent CLI commands or JustAMCP tools.
+
+Idle composition → `blazium-genre-idle`. BigNum-only clicker math → `blazium-clicker`.
 
 ## When not to use
 
@@ -49,5 +52,3 @@ Ask → options → user decides → draft → approve. Wait for yes before writ
 | remote_control | `:6508/v1` | `tools-programmer` / `blazium-cli` skill |
 | Hub remote | `:39218` | `blazium-hub-specialist` |
 | Games cloud | `https://mcp.blazium.games/mcp` | `blazium-live-ops-specialist` |
-
-

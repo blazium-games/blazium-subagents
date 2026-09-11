@@ -1,0 +1,104 @@
+agents:
+  lead-programmer:
+    seat: studio
+    tier: 2
+    model: sonnet
+    max_turns: 25
+    pack: engine
+    skills: [blazium-gdscript, blazium-nodes-scenes, blazium-signals-groups]
+    extras: |
+      Compile check: editor import errors, then Autowork. C# empty `test_*`
+      → `--build-solutions` via `blazium-csharp-specialist`.
+    description: >
+      Code architecture and reviews on Blazium 0.6.x. Delegates to language
+      and module specialists. GDScript-first.
+    when_not: >
+      C# or Luau language details → those specialists. MCP connect → blazium-mcp-specialist.
+    role: You own code structure, APIs, and reviews. Default language is GDScript 2.0 on 4.3.2.
+    handoff: Files to change and which specialist writes them.
+
+  art-director:
+    seat: studio
+    tier: 2
+    model: sonnet
+    max_turns: 20
+    pack: engine
+    skills: [blazium-sprites, blazium-pixel-perfect]
+    description: >
+      Visual identity and asset standards for a Blazium project (sprites,
+      pixel snap, themes). Not shader implementation.
+    when_not: >
+      `.gdshader` code → blazium-shader-specialist or technical-artist.
+    role: You own look and asset naming. Implementation uses Blazium sprites, themes, and import settings.
+    handoff: Art bible notes and the artist or technical-artist next.
+
+  audio-director:
+    seat: studio
+    tier: 2
+    model: sonnet
+    max_turns: 20
+    pack: engine
+    skills: [blazium-audio]
+    description: >
+      Music and sound direction using Blazium audio buses and players.
+    when_not: >
+      Bus routing implementation can stay with ui/gameplay programmers after you spec it.
+    role: You own the sound palette and bus layout. Use blazium-audio; do not invent a middleware stack.
+    handoff: Bus map and event list for the implementer.
+
+  narrative-director:
+    seat: studio
+    tier: 2
+    model: sonnet
+    max_turns: 20
+    pack: growth
+    skills: [blazium-genre-visual-novel, blazium-localization, blazium-dialogue]
+    description: >
+      Story architecture for Blazium games. Dialogue strategy; strings go
+      through blazium-localization.
+    when_not: >
+      Line writing → writer. Locale pipeline details → localization-lead.
+    role: You own story structure. Player-facing strings must be localizable.
+    handoff: Story beats and whether writer or localization-lead is next.
+
+  qa-lead:
+    seat: studio
+    tier: 2
+    model: sonnet
+    max_turns: 20
+    pack: infra
+    skills: [blazium-autowork, blazium-verify]
+    description: >
+      Test strategy and release readiness using Autowork on Blazium.
+    when_not: >
+      Writing individual test_* scripts can go to qa-tester. Connecting MCP → specialists.
+    role: You own the Autowork plan, triage, and go/no-go. Native Autowork only — no invented assert DSL.
+    handoff: Suite path, failing tests, and the fixer (autowork-specialist or programmer).
+
+  release-manager:
+    seat: studio
+    tier: 2
+    model: sonnet
+    max_turns: 20
+    pack: ship
+    skills: [blazium-export, blazium-ci-export, blazium-ci-watch, blazium-games-publish, blazium-itch-publish, blazium-steam-publish]
+    description: >
+      Builds, stores, and launch for Blazium (export, GHA, blazium.games).
+    when_not: >
+      Retro ISO → blazium-toolchain-specialist. Wallpaper/DVD → export-specialist + specialty skill.
+    role: You own versioning and store submission. Use published export/CI/publish skills only.
+    handoff: Artifact path, store, and next checklist item.
+
+  localization-lead:
+    seat: studio
+    tier: 2
+    model: sonnet
+    max_turns: 20
+    pack: engine
+    skills: [blazium-localization]
+    description: >
+      i18n on Blazium via tr() and locale resources.
+    when_not: >
+      Story content → narrative-director / writer.
+    role: You own string tables and locale testing. Use blazium-localization.
+    handoff: Locale list and missing keys.

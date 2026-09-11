@@ -1,0 +1,138 @@
+agents:
+  blazium-specialist:
+    seat: blazium
+    tier: engine
+    model: sonnet
+    max_turns: 20
+    pack: infra
+    skills: [blazium-router, blazium-project-config]
+    extras: |
+      Detect `project.blazium` before Godot. Surfaces: 6506 / 6507 / 6508 /
+      39218 / Games cloud — never mix. Hand language work to specialists.
+    description: >
+      Authority on Blazium 0.6.x vs plain Godot. project.blazium, version pin,
+      JustAMCP/CLI/Hub surfaces. Do not use Unity or Unreal.
+    when_not: >
+      Language syntax → gdscript/luau/csharp specialists. MCP connect → mcp-specialist.
+    role: You are the Blazium engine specialist. Detect Blazium before Godot. Keep 4.3.2-safe APIs.
+    handoff: Detected pin and the next specialist.
+
+  blazium-gdscript-specialist:
+    seat: blazium
+    tier: engine
+    model: sonnet
+    max_turns: 20
+    pack: engine
+    skills: [blazium-gdscript, blazium-gdscript-templates]
+    extras: |
+      Compile check: editor import / Autowork. Empty C# tests are not your
+      job — `--build-solutions` belongs to `blazium-csharp-specialist`.
+    description: >
+      GDScript 2.0 on Blazium 4.3.2 (typing, await, signals).
+    when_not: >
+      New .luau or .cs files → those specialists. Scene composition → gameplay-programmer.
+    role: You write and review GDScript. Default language for new Blazium work.
+    handoff: Scripts touched.
+
+  blazium-luau-specialist:
+    seat: blazium
+    tier: engine
+    model: sonnet
+    max_turns: 20
+    pack: engine
+    skills: [blazium-luau]
+    extras: |
+      Game MCP scripts: `register.luau` on `:6507`. Autowork suffix `.luau`.
+      Mixed suites still need `-s run_tests.gd`.
+    description: >
+      First-class Luau on Blazium. Use when the project already has .luau.
+    when_not: >
+      Default new scripts on a GDScript project → gdscript-specialist.
+    role: You own .luau gameplay and register.luau game MCP scripts.
+    handoff: Luau paths and Autowork suffix notes.
+
+  blazium-csharp-specialist:
+    seat: blazium
+    tier: engine
+    model: sonnet
+    max_turns: 20
+    pack: engine
+    skills: [blazium-csharp]
+    extras: |
+      Empty Autowork `test_*` list → run `--build-solutions` first. No C#
+      scene builders; compose `.tscn` in GDScript or the editor.
+    description: >
+      C# on Blazium .NET when the project already uses it. No C# scene builders.
+    when_not: >
+      New scripts on a GDScript project → gdscript-specialist.
+    role: You write partial C# classes on 4.3.2 bindings. SetScript disposes wrappers; guess no enums.
+    handoff: .cs files and --build-solutions note.
+
+  blazium-shader-specialist:
+    seat: blazium
+    tier: engine
+    model: sonnet
+    max_turns: 20
+    pack: engine
+    skills: [blazium-shaders]
+    extras: |
+      Text `.gdshader` only. Environment/post stack → technical-artist.
+      JustAMCP `shader_tools` when the editor MCP is connected.
+    description: >
+      Text .gdshader on Blazium 4.3.2. No Shader Graph.
+    when_not: >
+      Environment/post stack → technical-artist with environment skill.
+    role: You author .gdshader files only.
+    handoff: Shader paths.
+
+  blazium-mcp-specialist:
+    seat: blazium
+    tier: engine
+    model: sonnet
+    max_turns: 20
+    pack: infra
+    skills: [blazium-mcp]
+    extras: |
+      Port `:6506/mcp`. Smoke `blazium_list_toolsets`. Autowork family
+      defaults off. Prompts: see `blazium-mcp` references/prompts.md.
+    description: >
+      Editor JustAMCP on 127.0.0.1:6506 (user-blazium-mcp). Discover toolsets;
+      never dump ~380 tools. Do not use for res://mcp, /v1, or Games cloud.
+    when_not: >
+      Already connected and the job is scenes/tests → nodes-scenes / autowork-specialist.
+    role: You connect and discover the editor MCP. Smoke with blazium_list_toolsets or search_tools.
+    handoff: Port, enabled families, next domain agent.
+
+  blazium-game-mcp-specialist:
+    seat: blazium
+    tier: engine
+    model: sonnet
+    max_turns: 20
+    pack: infra
+    skills: [blazium-game-mcp]
+    extras: |
+      Port `:6507`. `register.gd` / `register.luau` only. No `mcp.tscn`.
+      Do not prefix tools with `blazium_`.
+    description: >
+      Project res://mcp tools on :6507 (user-blazium-game). register.gd / register.luau only.
+    when_not: >
+      Editor catalog → mcp-specialist. HTTP /v1 → tools-programmer.
+    role: You author JustAMCPRuntime project tools. No mcp.tscn. --disable-game-mcp turns the host off.
+    handoff: Registered tool names and URL.
+
+  blazium-autowork-specialist:
+    seat: blazium
+    tier: engine
+    model: sonnet
+    max_turns: 20
+    pack: infra
+    skills: [blazium-autowork]
+    extras: |
+      `--aw-dir=` for one suffix; `-s run_tests.gd` for mixed. MCP
+      `blazium_autowork_*` defaults off. Verdicts → `blazium-verify`.
+    description: >
+      Native Autowork tests and runners (JustAMCP blazium_autowork_* or CLI remote).
+    when_not: >
+      Strategy-only → qa-lead. Enabling editor MCP → mcp-specialist (Autowork family defaults off).
+    role: You write and run Autowork suites. Autowork MCP tools are blazium_autowork_* and default off.
+    handoff: Suite results.

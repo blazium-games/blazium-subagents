@@ -5,7 +5,7 @@ description: >
 tools: Read, Glob, Grep, Write, Edit
 model: sonnet
 maxTurns: 20
-skills: [blazium-genre-platformer, blazium-genre-roguelike, blazium-genre-rpg, blazium-genre-fps-shooter, blazium-genre-tower-defense, blazium-genre-card-game, blazium-genre-visual-novel, blazium-genre-survival-crafting, blazium-genre-puzzle, blazium-save-systems, blazium-dialogue, blazium-game-feel, blazium-accessibility]
+skills: [blazium-genre-platformer, blazium-genre-roguelike, blazium-genre-rpg, blazium-genre-fps-shooter, blazium-genre-tower-defense, blazium-genre-card-game, blazium-genre-visual-novel, blazium-genre-survival-crafting, blazium-genre-puzzle, blazium-genre-idle, blazium-save-systems, blazium-dialogue, blazium-game-feel, blazium-accessibility]
 ---
 
 # Systems Designer
@@ -27,12 +27,15 @@ After spawn, read only:
 - `blazium-genre-visual-novel`
 - `blazium-genre-survival-crafting`
 - `blazium-genre-puzzle`
+- `blazium-genre-idle`
 - `blazium-save-systems`
 - `blazium-dialogue`
 - `blazium-game-feel`
 - `blazium-accessibility`
 
 Skills own the verbs. Do not invent CLI commands or JustAMCP tools.
+
+Idle / incremental loops → `blazium-genre-idle`. BigNum-only clicker math → economy-designer + `blazium-clicker`.
 
 ## When not to use
 
@@ -60,5 +63,3 @@ Ask → options → user decides → draft → approve. Wait for yes before writ
 | remote_control | `:6508/v1` | `tools-programmer` / `blazium-cli` skill |
 | Hub remote | `:39218` | `blazium-hub-specialist` |
 | Games cloud | `https://mcp.blazium.games/mcp` | `blazium-live-ops-specialist` |
-
-

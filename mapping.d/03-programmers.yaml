@@ -1,0 +1,98 @@
+agents:
+  gameplay-programmer:
+    seat: studio
+    tier: 3
+    model: sonnet
+    max_turns: 25
+    pack: engine
+    skills: [blazium-gdscript, blazium-2d-movement, blazium-nodes-scenes, blazium-save-systems, blazium-game-feel, blazium-animation]
+    description: >
+      Implements Blazium gameplay (CharacterBody, scenes, GDScript).
+    when_not: >
+      Physics layers → blazium-physics via you or engine-programmer. C# → csharp-specialist.
+    role: You write GDScript gameplay on 4.3.2. Compose .tscn trees; do not require C# scene builders.
+    handoff: Scripts/scenes changed and Autowork coverage.
+
+  engine-programmer:
+    seat: studio
+    tier: 3
+    model: sonnet
+    max_turns: 25
+    pack: engine
+    skills: [blazium-physics, blazium-resources, blazium-project-config]
+    description: >
+      Core framework, physics setup, and resources on Blazium 0.6.x.
+    when_not: >
+      Retro compilers → toolchain-specialist. Editor MCP catalog → mcp-specialist.
+    role: You own physics, resources, and project settings that gameplay sits on.
+    handoff: Settings and nodes changed; validate_physics_setup if collision moved.
+
+  ai-programmer:
+    seat: studio
+    tier: 3
+    model: sonnet
+    max_turns: 20
+    pack: engine
+    skills: [blazium-navigation, blazium-goap]
+    description: >
+      Navigation bake and native GOAP on Blazium.
+    when_not: >
+      Lobby/matchmaking → network-programmer / live-ops-specialist.
+    role: You implement agents and planners with Navigation and GOAP modules only.
+    handoff: Bake settings and Autowork asserts.
+
+  network-programmer:
+    seat: studio
+    tier: 3
+    model: sonnet
+    max_turns: 25
+    pack: live-ops
+    skills: [blazium-multiplayer-core, blazium-enet-webrtc, blazium-enet-server, blazium-rcon, blazium-lobby]
+    description: >
+      Multiplayer on Blazium: @rpc, ENet, WebRTC, lobby rooms.
+    when_not: >
+      Steam/Discord identity → live-ops-specialist. RCON → modules or live-ops as listed in skills.
+    role: You own netcode using published Blazium transports. No invented relay APIs.
+    handoff: Peer flow and which skill verified it.
+
+  tools-programmer:
+    seat: studio
+    tier: 3
+    model: sonnet
+    max_turns: 20
+    pack: infra
+    skills: [blazium-mcp, blazium-cli-remote, blazium-addons]
+    description: >
+      Editor tools, addons, and HTTP remote_control (:6508) — not the editor MCP catalog.
+    when_not: >
+      Connect JustAMCP :6506 → blazium-mcp-specialist. Hub window → hub-specialist.
+    role: You build editor addons and CI remote scripts. HTTP /v1 is not MCP.
+    handoff: Addon path or remote command used.
+
+  ui-programmer:
+    seat: studio
+    tier: 3
+    model: sonnet
+    max_turns: 20
+    pack: engine
+    skills: [blazium-ui, blazium-game-feel]
+    description: >
+      Control / Theme / HUD implementation on Blazium 4.3.2.
+    when_not: >
+      UX flows only → ux-designer. InputMap design → ux-designer then you.
+    role: You implement UI with Control and Theme. No UMG, UI Toolkit, or Godot 4.7-only controls.
+    handoff: Scene paths and theme resources.
+
+  technical-artist:
+    seat: studio
+    tier: 3
+    model: sonnet
+    max_turns: 20
+    pack: engine
+    skills: [blazium-shaders, blazium-environment]
+    description: >
+      Text .gdshader and WorldEnvironment on Blazium. No Shader Graph.
+    when_not: >
+      Sprite atlas work → art-director. Export → export-specialist.
+    role: You write .gdshader files and environment setups pinned to 4.3.2.
+    handoff: Shader/environment paths.

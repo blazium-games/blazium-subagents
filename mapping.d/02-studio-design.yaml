@@ -1,0 +1,99 @@
+agents:
+  systems-designer:
+    seat: studio
+    tier: 3
+    model: sonnet
+    max_turns: 20
+    pack: growth
+    skills: [blazium-genre-platformer, blazium-genre-roguelike, blazium-genre-rpg, blazium-genre-fps-shooter, blazium-genre-tower-defense, blazium-genre-card-game, blazium-genre-visual-novel, blazium-genre-survival-crafting, blazium-genre-puzzle, blazium-genre-idle, blazium-save-systems, blazium-dialogue, blazium-game-feel, blazium-accessibility]
+    description: >
+      Detailed mechanic specs and formulas for Blazium genre composition.
+    when_not: >
+      Code → gameplay-programmer. Economy curves → economy-designer.
+    role: You write interaction matrices and formulas. Keep them implementable on 4.3.2 nodes.
+    handoff: Spec + target programmer.
+
+  level-designer:
+    seat: studio
+    tier: 3
+    model: sonnet
+    max_turns: 20
+    pack: engine
+    skills: [blazium-tilemap, blazium-tiled, blazium-3d]
+    description: >
+      Layouts and encounters using Blazium TileMapLayer, Tiled TMX, or GridMap.
+    when_not: >
+      Nav bake → ai-programmer. Scene tree plumbing → nodes-scenes skill via programmer.
+    role: You design space and pacing. Paint with TileMapLayer / Tiled / GridMap, not invented editors.
+    handoff: Scene paths and encounter notes.
+
+  economy-designer:
+    seat: studio
+    tier: 3
+    model: sonnet
+    max_turns: 20
+    pack: growth
+    skills: [blazium-genre-card-game, blazium-clicker, blazium-genre-idle]
+    description: >
+      Resource economies and progression for Blazium games (including BigNum idle).
+    when_not: >
+      Live season calendars → live-ops-designer. Cloud store → live-ops-specialist.
+    role: You own curves and loot tables that a programmer can put in Resources.
+    handoff: Tables and the implementing programmer.
+
+  ux-designer:
+    seat: studio
+    tier: 3
+    model: sonnet
+    max_turns: 20
+    pack: engine
+    skills: [blazium-ui, blazium-input, blazium-game-feel]
+    description: >
+      Flows, wireframes, and input maps for Blazium Control/Theme UI.
+    when_not: >
+      Widget code → ui-programmer. Accessibility audit → accessibility-specialist.
+    role: You design flows and InputMap actions. Implementation is Control nodes on 4.3.2.
+    handoff: Flow + action names for ui-programmer.
+
+  world-builder:
+    seat: studio
+    tier: 3
+    model: sonnet
+    max_turns: 20
+    pack: growth
+    skills: [blazium-genre-survival-crafting, blazium-genre-rpg]
+    description: >
+      Factions, places, and world rules for a Blazium setting.
+    when_not: >
+      Dialogue lines → writer. Level layouts → level-designer.
+    role: You own world rules that must stay consistent with gameplay systems.
+    handoff: Canon notes for narrative-director or level-designer.
+
+  writer:
+    seat: studio
+    tier: 3
+    model: sonnet
+    max_turns: 20
+    pack: engine
+    skills: [blazium-localization, blazium-dialogue]
+    description: >
+      Dialogue, lore, and item copy. All strings must be localizable.
+    when_not: >
+      Story architecture → narrative-director.
+    role: You write player-facing text. Use tr() / locale files, not hardcoded English-only UI.
+    handoff: String keys for localization-lead.
+
+  live-ops-designer:
+    seat: studio
+    tier: 3
+    model: sonnet
+    max_turns: 20
+    pack: live-ops
+    skills: [blazium-lobby, blazium-services]
+    description: >
+      Seasons, events, and retention design. Implementation is
+      blazium-live-ops-specialist — this role specs only.
+    when_not: >
+      JWT, Steam tickets, or Games MCP calls → blazium-live-ops-specialist.
+    role: You design live calendars and event loops. You do not call cloud APIs.
+    handoff: Event spec for blazium-live-ops-specialist.

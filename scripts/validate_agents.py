@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate blazium-subagents against mapping.yaml and blazium-skills marketplace."""
+"""Validate blazium-subagents against mapping.yaml + mapping.d and the skills marketplace."""
 
 from __future__ import annotations
 
@@ -15,6 +15,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 MAPPING = ROOT / "mapping.yaml"
+SHARDS = ROOT / "mapping.d"
 AGENTS = ROOT / "agents"
 DEFAULT_MARKET_URL = (
     "https://raw.githubusercontent.com/blazium-games/blazium-skills"
@@ -25,6 +26,17 @@ BANNED = re.compile(
     r"\b(Unity|Unreal|Godot 4\.7|town-sdk|DDDBrowser|Shader Graph)\b",
     re.I,
 )
+
+
+def load_mapping() -> dict:
+    data = yaml.safe_load(MAPPING.read_text(encoding="utf-8"))
+    agents = dict(data.get("agents") or {})
+    if SHARDS.is_dir():
+        for shard in sorted(SHARDS.glob("*.yaml")):
+            extra = yaml.safe_load(shard.read_text(encoding="utf-8")) or {}
+            agents.update(extra.get("agents") or extra)
+    data["agents"] = agents
+    return data
 
 
 def published_skills(catalog: object) -> set[str]:
@@ -86,7 +98,7 @@ def resolve_marketplace(data: dict) -> tuple[str, object | None]:
 
 
 def main() -> int:
-    data = yaml.safe_load(MAPPING.read_text(encoding="utf-8"))
+    data = load_mapping()
     expected = set(data["agents"])
     errors: list[str] = []
     files = {p.stem for p in AGENTS.glob("*.md")}
@@ -131,7 +143,6 @@ def main() -> int:
             continue
         text = path.read_text(encoding="utf-8")
         if BANNED.search(text) and "Do not use Unity, Unreal" not in text and "Do not apply Godot 4.7" not in text:
-            # allow the pin/prohibition sentence; fail other product mentions
             for match in BANNED.finditer(text):
                 snippet = text[max(0, match.start() - 40) : match.end() + 40]
                 if re.search(r"do not|no |not apply|not use|not clone", snippet, re.I):

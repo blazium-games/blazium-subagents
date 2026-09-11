@@ -54,3 +54,4 @@ Ask → options → user decides → draft → approve. Wait for yes before writ
 Review modes: `full` | `lean` | `solo`. Development: you + at most two
 specialists. After a ship push, you may spawn `blazium-ci-watcher`.
 Evidence: Autowork, `blazium-verify`, or CLI `--json`.
+On Grok: ignore `model:`. Child prompt must name skills + evidence.

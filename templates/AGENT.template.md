@@ -49,4 +49,6 @@ Ask → options → user decides → draft → approve. Wait for yes before writ
 | Hub remote | `:39218` | `blazium-hub-specialist` |
 | Games cloud | `https://mcp.blazium.games/mcp` | `blazium-live-ops-specialist` |
 
+On Grok: ignore the `model:` field. Spawn children with the skill names above plus the evidence rule (Autowork / JustAMCP / CLI `--json` / `INCONCLUSIVE`). Do not dump the roster. Grok `code_execution` is not Blazium evidence.
+
 {extras}
