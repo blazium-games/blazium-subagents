@@ -1,7 +1,9 @@
 # Grok host — blazium-subagents
 
 How Grok should spawn and run this roster. Agents are generated from
-`mapping.yaml`. Do not hand-edit `agents/*.md`.
+`mapping.yaml` plus `mapping.d/*.yaml` shards (`scripts/generate_agents.py`).
+Prefer regenerating after mapping edits. Small extras already on origin may
+stay as targeted `agents/*.md` patches.
 
 Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**. GDScript-first. Skills live in
 [blazium-skills](https://github.com/blazium-games/blazium-skills). Read that
@@ -25,6 +27,22 @@ python scripts/validate_agents.py
 
 Grok does not need a new marketplace file. Point it at `.grok/agents/*.md`
 or paste one agent file as the specialist system prompt.
+
+## Mapping layout
+
+| File | Seats |
+|------|--------|
+| `mapping.yaml` | header, modes, orchestrator → game-designer |
+| `mapping.d/01-studio-leads.yaml` | lead-programmer → localization-lead |
+| `mapping.d/02-studio-design.yaml` | systems-designer → live-ops-designer |
+| `mapping.d/03-programmers.yaml` | gameplay-programmer → technical-artist |
+| `mapping.d/04-engine.yaml` | blazium-specialist → autowork-specialist |
+| `mapping.d/05-engine-ship.yaml` | cli-specialist → ci-watcher |
+| `mapping.d/06-studio-ops.yaml` | performance-analyst → community-manager |
+
+`generate_agents.py` and `validate_agents.py` both call `load_mapping()` and
+merge those shards. Do not collapse them into one 32KB `mapping.yaml` through
+the write gateway — it truncates.
 
 ## Model field
 
@@ -61,9 +79,6 @@ skills to read, and the evidence required.
 
 Idle composition is `blazium-genre-idle`. BigNum-only math stays on
 `blazium-clicker`. Do not treat clicker as the whole idle game.
-
-After adding `blazium-genre-idle` to designer skill lists in `mapping.yaml`,
-regenerate agents. Do not hand-edit `agents/*.md`.
 
 ## Four surfaces (never mix)
 
