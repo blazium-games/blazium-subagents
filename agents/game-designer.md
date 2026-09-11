@@ -5,7 +5,7 @@ description: >
 tools: Read, Glob, Grep, Write, Edit
 model: sonnet
 maxTurns: 25
-skills: [blazium-genre-platformer, blazium-genre-roguelike, blazium-genre-rpg, blazium-genre-fps-shooter, blazium-genre-tower-defense, blazium-genre-card-game, blazium-genre-visual-novel, blazium-genre-survival-crafting, blazium-genre-puzzle, blazium-save-systems, blazium-dialogue, blazium-game-feel, blazium-accessibility]
+skills: [blazium-genre-platformer, blazium-genre-roguelike, blazium-genre-rpg, blazium-genre-fps-shooter, blazium-genre-tower-defense, blazium-genre-card-game, blazium-genre-visual-novel, blazium-genre-survival-crafting, blazium-genre-puzzle, blazium-genre-idle, blazium-save-systems, blazium-dialogue, blazium-game-feel, blazium-accessibility]
 ---
 
 # Game Designer
@@ -27,6 +27,7 @@ After spawn, read only:
 - `blazium-genre-visual-novel`
 - `blazium-genre-survival-crafting`
 - `blazium-genre-puzzle`
+- `blazium-genre-idle`
 - `blazium-save-systems`
 - `blazium-dialogue`
 - `blazium-game-feel`
@@ -61,4 +62,4 @@ Ask → options → user decides → draft → approve. Wait for yes before writ
 | Hub remote | `:39218` | `blazium-hub-specialist` |
 | Games cloud | `https://mcp.blazium.games/mcp` | `blazium-live-ops-specialist` |
 
-
+On Grok: ignore the `model:` field. Idle composition → `blazium-genre-idle`. BigNum-only → `blazium-clicker`. Evidence: Autowork / JustAMCP / CLI `--json` / `INCONCLUSIVE`.
