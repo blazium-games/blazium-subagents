@@ -1,17 +1,20 @@
-# mapping.yaml restore instructions
+# mapping.yaml status
 
-Origin `mapping.yaml` on `lucas/growth-ship-grok-host` is TRUNCATED (orchestrator-only after 14dbcd).
+Do not regenerate `agents/*.md` until `mapping.yaml` is ~848 lines and the last agent key is `blazium-ci-watcher`.
 
-Do not regenerate `agents/*.md` from current HEAD.
-Do not merge this PR.
+Last intact blob on `main`: `8669e1ac` (~842 lines).
 
-Last intact blob on this branch: `8669e1ac` at commit `c35539bd` (~843 lines, all seats through `blazium-ci-watcher`).
+Local patched copy (848 lines, 54 keys) lives in the agent sandbox at `artifacts/ben-push/mapping.yaml` with:
 
-Apply these extras onto that blob, then replace origin:
+- `blazium-genre-idle` on `game-designer`, `systems-designer`, `economy-designer`
+- `blazium-itch-publish` + `blazium-steam-publish` on `release-manager`
+- Grok extras on orchestrator + producer
 
-1. `game-designer` and `systems-designer` skills: add `blazium-genre-idle` after puzzle.
-2. `economy-designer` skills: `[blazium-genre-card-game, blazium-clicker, blazium-genre-idle]`.
-3. `release-manager` skills: add `blazium-itch-publish`, `blazium-steam-publish`.
-4. Orchestrator + producer extras: Grok ignore `model:`; child prompts name skills + evidence; idle → genre-idle; BigNum-only → clicker.
+Remote `push_files` calls have been dropping the tail of this 32KB file. Restore locally:
 
-A complete 850-line patched file exists locally (`artifacts/mapping.patched.yaml`). Next write must upload that entire file, not a fragment.
+```bash
+git show 8669e1ac:mapping.yaml > mapping.yaml
+# apply extras from this file, then:
+python scripts/generate_agents.py
+python scripts/validate_agents.py
+```
