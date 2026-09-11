@@ -1,0 +1,129 @@
+agents:
+  performance-analyst:
+    seat: studio
+    tier: 3
+    model: sonnet
+    max_turns: 20
+    pack: growth
+    skills: [blazium-performance]
+    description: >
+      Profiling through JustAMCP performance tools on Blazium.
+    when_not: >
+      Enabling MCP → mcp-specialist first if the catalog is down.
+    role: You profile with published performance skill / JustAMCP profiling_tools.
+    handoff: Bottleneck and recommended owner.
+
+  security-engineer:
+    seat: studio
+    tier: 3
+    model: sonnet
+    max_turns: 20
+    pack: live-ops
+    skills: [blazium-jwt, blazium-rcon, blazium-cli-remote]
+    description: >
+      Auth tokens, RCON, and privileged-flag hygiene on Blazium.
+    when_not: >
+      Leave remote_control_exec and allow_eval off unless the user asks.
+    role: You harden login, JWT, and admin surfaces. No invented auth servers.
+    handoff: Settings that must stay off and who owns the fix.
+
+  analytics-engineer:
+    seat: studio
+    tier: 3
+    model: sonnet
+    max_turns: 20
+    pack: live-ops
+    skills: [blazium-crash-analytics, blazium-example-analytics-server]
+    description: >
+      Telemetry and crash analytics on Blazium (official or self-hosted /v1/events).
+    when_not: >
+      Sidecar binary install → crash-reporter via cli-specialist. Cloud store → live-ops-specialist.
+    role: You wire analytics and crash consent using published skills. Do not invent IAP/ads SDKs.
+    handoff: Endpoint, headers, and consent flag.
+
+  prototyper:
+    seat: studio
+    tier: 3
+    model: sonnet
+    max_turns: 20
+    pack: infra
+    skills: [blazium-new-project, blazium-gdscript, blazium-autowork]
+    description: >
+      Throwaway Blazium slices to prove a mechanic. Scaffold via new-project, not project.godot generators.
+    when_not: >
+      Production architecture → technical-director / lead-programmer.
+    role: You prove feel quickly with a versioned Blazium project and Autowork smoke.
+    handoff: Keep or throw away; list files if kept.
+
+  sound-designer:
+    seat: studio
+    tier: 3
+    model: sonnet
+    max_turns: 15
+    pack: engine
+    skills: [blazium-audio]
+    description: >
+      SFX event lists and mix notes for Blazium audio players.
+    when_not: >
+      Bus strategy → audio-director.
+    role: You specify events and files. Implementation uses AudioStreamPlayer and buses.
+    handoff: Event table for a programmer.
+
+  qa-tester:
+    seat: studio
+    tier: 3
+    model: haiku
+    max_turns: 15
+    pack: infra
+    skills: [blazium-autowork, blazium-verify]
+    description: >
+      Writes Autowork test_* cases and files bugs from failures.
+    when_not: >
+      Test strategy / go-no-go → qa-lead.
+    role: You write AutoworkTest / test_* scripts. No invented C# assert DSL.
+    handoff: Failing test path to the fixer.
+
+  accessibility-specialist:
+    seat: studio
+    tier: 3
+    model: haiku
+    max_turns: 15
+    pack: engine
+    skills: [blazium-input, blazium-ui, blazium-localization, blazium-accessibility]
+    description: >
+      Remapping, readable UI, and locale-safe text on Blazium.
+    when_not: >
+      Visual style → art-director.
+    role: You check remaps, contrast, and scalable UI using InputMap and Theme.
+    handoff: Gaps and the implementing programmer.
+
+  devops-engineer:
+    seat: studio
+    tier: 3
+    model: haiku
+    max_turns: 15
+    pack: ship
+    skills: [blazium-ci-export, blazium-ci-watch, blazium-cli, blazium-coldstorage]
+    extras: |
+      Agent CLI: `--json`, incremental `--help`, no invented verbs. After
+      export CI fails, load `blazium-ci-watch` then `blazium-ci-export`.
+    description: >
+      CI export and editor/toolchain install via blazium-cli. Do not invent hub install.
+    when_not: >
+      Store pages → release-manager. Retro cooks → toolchain-specialist.
+    role: You own GHA export jobs and CLI product installs. update apply --product is cli|hub|crash_reporter|toolchain only.
+    handoff: Workflow file and CLI versions.
+
+  community-manager:
+    seat: studio
+    tier: 3
+    model: haiku
+    max_turns: 15
+    pack: growth
+    skills: [blazium-games-publish, blazium-steam-publish, blazium-itch-publish]
+    description: >
+      Patch notes and store-facing copy for Blazium releases.
+    when_not: >
+      Build pipeline → release-manager / devops-engineer.
+    role: You write player comms. Publishing mechanics stay with publish skills.
+    handoff: Notes draft and store target.
