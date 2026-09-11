@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render agents/*.md from mapping.yaml and AGENT.template.md."""
+"""Render agents/*.md from mapping.yaml plus mapping.d/*.yaml shards."""
 
 from __future__ import annotations
 
@@ -9,6 +9,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 MAPPING = ROOT / "mapping.yaml"
+SHARDS = ROOT / "mapping.d"
 TEMPLATE = ROOT / "templates" / "AGENT.template.md"
 OUT = ROOT / "agents"
 
@@ -39,8 +40,19 @@ def fold_description(text: str) -> str:
     return "\n  ".join(lines)
 
 
-def main() -> int:
+def load_mapping() -> dict:
     data = yaml.safe_load(MAPPING.read_text(encoding="utf-8"))
+    agents = dict(data.get("agents") or {})
+    if SHARDS.is_dir():
+        for shard in sorted(SHARDS.glob("*.yaml")):
+            extra = yaml.safe_load(shard.read_text(encoding="utf-8")) or {}
+            agents.update(extra.get("agents") or extra)
+    data["agents"] = agents
+    return data
+
+
+def main() -> int:
+    data = load_mapping()
     template = TEMPLATE.read_text(encoding="utf-8")
     OUT.mkdir(parents=True, exist_ok=True)
     for name, spec in data["agents"].items():
