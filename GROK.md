@@ -9,6 +9,12 @@ Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**. GDScript-first. Skills live in
 [blazium-skills](https://github.com/blazium-games/blazium-skills). Read that
 repo's `GROK.md` first.
 
+## Community
+
+- Official website: [https://blazium.app/](https://blazium.app/)
+- IndieDB blog: [https://www.indiedb.com/engines/blazium-engine](https://www.indiedb.com/engines/blazium-engine)
+- Official community: [Blazium Discord](https://discord.gg/sZaf9KYzDp)
+
 ## Install
 
 ```bash

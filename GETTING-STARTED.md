@@ -7,6 +7,15 @@ Install [blazium-skills](https://github.com/blazium-games/blazium-skills) first
 so listed skills resolve on Claude, Cursor, Codex, and Grok. Grok host notes:
 [GROK.md](GROK.md).
 
+## Community
+
+- Official website: [https://blazium.app/](https://blazium.app/)
+- IndieDB blog: [https://www.indiedb.com/engines/blazium-engine](https://www.indiedb.com/engines/blazium-engine)
+- Official community: [Blazium Discord](https://discord.gg/sZaf9KYzDp)
+- Docs: [docs.blazium.app](https://docs.blazium.app)
+
+Roster releases: [subagents.json](https://cdn.blazium.app/subagents/subagents.json).
+
 ```bash
 # Claude Code
 /plugin marketplace add blazium-games/blazium-skills

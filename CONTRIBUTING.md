@@ -5,6 +5,12 @@ Canonical agents live in [`mapping.yaml`](mapping.yaml). Do not hand-edit
 files. Verbs and APIs live in
 [blazium-skills](https://github.com/blazium-games/blazium-skills).
 
+## Community
+
+- Official website: [https://blazium.app/](https://blazium.app/)
+- IndieDB blog: [https://www.indiedb.com/engines/blazium-engine](https://www.indiedb.com/engines/blazium-engine)
+- Official community: [Blazium Discord](https://discord.gg/sZaf9KYzDp)
+
 Grok host notes: [GROK.md](GROK.md).
 
 ## Add or change an agent
