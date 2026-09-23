@@ -4,6 +4,7 @@ Canonical agents live in [`mapping.yaml`](mapping.yaml). Do not hand-edit
 `agents/*.md` except to inspect a generate result — regenerate owns those
 files. Verbs and APIs live in
 [blazium-skills](https://github.com/blazium-games/blazium-skills).
+Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 ## Community
 

@@ -10,11 +10,11 @@ agents:
       Compile check: editor import errors, then Autowork. C# empty `test_*`
       → `--build-solutions` via `blazium-csharp-specialist`.
     description: >
-      Code architecture and reviews on Blazium 0.6.x. Delegates to language
+      Code architecture and reviews on Blazium 0.8.x. Delegates to language
       and module specialists. GDScript-first.
     when_not: >
       C# or Luau language details → those specialists. MCP connect → blazium-mcp-specialist.
-    role: You own code structure, APIs, and reviews. Default language is GDScript 2.0 on 4.3.2.
+    role: You own code structure, APIs, and reviews. Default language is GDScript 2.0 on 4.8.x.
     handoff: Files to change and which specialist writes them.
 
   art-director:

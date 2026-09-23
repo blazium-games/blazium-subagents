@@ -1,19 +1,19 @@
 ---
 name: setup-blazium
-description: Pin this repo to Blazium 0.6.x. Use when starting a Blazium game or confirming the editor.
+description: Pin this repo to Blazium 0.8.x. Use when starting a Blazium game or confirming the editor.
 user-invocable: true
 ---
 
 # Setup Blazium
 
-Load `blazium-cli` and `blazium-project-config`. Confirm a 0.6.x editor exists.
+Load `blazium-cli` and `blazium-project-config`. Confirm a 0.8.x editor exists.
 
 Write or update `.claude/docs/technical-preferences.md` (create the folder if needed) with:
 
 ```text
 engine: blazium
-product: 0.6.x
-godot_compat: 4.3.2
+product: 0.8.x
+godot_compat: 4.8.x
 languages: gdscript-first
 ```
 

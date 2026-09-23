@@ -142,7 +142,7 @@ def main() -> int:
         if not path.is_file():
             continue
         text = path.read_text(encoding="utf-8")
-        if BANNED.search(text) and "Do not use Unity, Unreal" not in text and "Do not apply Godot 4.7" not in text:
+        if BANNED.search(text) and "Do not use Unity, Unreal" not in text and "blazium_4.8" not in text:
             for match in BANNED.finditer(text):
                 snippet = text[max(0, match.start() - 40) : match.end() + 40]
                 if re.search(r"do not|no |not apply|not use|not clone", snippet, re.I):

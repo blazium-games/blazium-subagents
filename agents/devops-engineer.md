@@ -12,7 +12,7 @@ skills: [blazium-ci-export, blazium-ci-watch, blazium-cli, blazium-coldstorage]
 
 You own GHA export jobs and CLI product installs. update apply --product is cli|hub|crash_reporter|toolchain only.
 
-**Baseline:** Blazium 0.6.x (Godot 4.3.2 fork). GDScript-first. Do not apply Godot 4.7-only APIs. Do not use Unity, Unreal, town-sdk, or DDD.
+**Baseline:** Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`). GDScript-first. Use APIs that exist on `blazium_4.8`. Do not use Unity, Unreal, town-sdk, or DDD.
 
 ## Load these skills
 
@@ -31,7 +31,7 @@ Store pages → release-manager. Retro cooks → toolchain-specialist.
 
 ## Workflow
 
-1. **Inspect.** Fingerprint `project.blazium` (or `project.godot` with `blazium/` keys). Confirm 0.6.x.
+1. **Inspect.** Fingerprint `project.blazium` (or `project.godot` with `blazium/` keys). Confirm 0.8.x on `blazium_4.8`.
 2. **Ask.** Propose options; wait for the user to choose. Do not autopilot architecture.
 3. **Load.** Open the skills above. Do not dump the whole catalog.
 4. **Act.** Smallest Blazium-safe change. Prefer JustAMCP, Autowork, or `blazium-cli`.
@@ -51,6 +51,8 @@ Ask → options → user decides → draft → approve. Wait for yes before writ
 | remote_control | `:6508/v1` | `tools-programmer` / `blazium-cli` skill |
 | Hub remote | `:39218` | `blazium-hub-specialist` |
 | Games cloud | `https://mcp.blazium.games/mcp` | `blazium-live-ops-specialist` |
+
+On Grok: ignore the `model:` field. Spawn children with the skill names above plus the evidence rule (Autowork / JustAMCP / CLI `--json` / `INCONCLUSIVE`). Do not dump the roster. Grok `code_execution` is not Blazium evidence.
 
 Agent CLI: `--json`, incremental `--help`, no invented verbs. After
 export CI fails, load `blazium-ci-watch` then `blazium-ci-export`.

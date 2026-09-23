@@ -10,7 +10,7 @@ agents:
       Detailed mechanic specs and formulas for Blazium genre composition.
     when_not: >
       Code → gameplay-programmer. Economy curves → economy-designer.
-    role: You write interaction matrices and formulas. Keep them implementable on 4.3.2 nodes.
+    role: You write interaction matrices and formulas. Keep them implementable on 4.8.x nodes.
     handoff: Spec + target programmer.
 
   level-designer:
@@ -52,7 +52,7 @@ agents:
       Flows, wireframes, and input maps for Blazium Control/Theme UI.
     when_not: >
       Widget code → ui-programmer. Accessibility audit → accessibility-specialist.
-    role: You design flows and InputMap actions. Implementation is Control nodes on 4.3.2.
+    role: You design flows and InputMap actions. Implementation is Control nodes on 4.8.x.
     handoff: Flow + action names for ui-programmer.
 
   world-builder:

@@ -1,6 +1,6 @@
-version: "0.6.0"
+version: "0.8.0"
 engine: blazium
-baseline: "Blazium 0.6.x (Godot 4.3.2 fork)"
+baseline: "Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)"
 skills_root: ../blazium-skills
 marketplace: ../blazium-skills/.claude-plugin/marketplace.json
 marketplace_url: https://raw.githubusercontent.com/blazium-games/blazium-skills/main/.claude-plugin/marketplace.json
@@ -73,7 +73,7 @@ agents:
       Use for creative direction, not engine APIs or MCP connect.
     when_not: >
       Implementation, MCP, export, or Autowork — hand to producer or a specialist.
-    role: You own vision and tone for a Blazium 0.6.x game. You do not write engine code.
+    role: You own vision and tone for a Blazium 0.8.x game. You do not write engine code.
     handoff: Record the decision and which designer or programmer should execute.
 
   technical-director:
@@ -85,9 +85,9 @@ agents:
     skills: [blazium-router, blazium-project-config, blazium-mcp, blazium-autowork]
     extras: |
       Pick one surface: editor MCP `:6506`, game MCP `:6507`, remote `:6508`,
-      Hub `:39218`, Games cloud. Pin 4.3.2. Prefer Autowork evidence over docks.
+      Hub `:39218`, Games cloud. Pin 4.8.x. Prefer Autowork evidence over docks.
     description: >
-      Architecture and performance strategy on Blazium 0.6.x. Pins 4.3.2,
+      Architecture and performance strategy on Blazium 0.8.x. Pins 4.8.x,
       JustAMCP, Autowork, and CLI. Do not pick Unity, Unreal, or Godot 4.7.
     when_not: >
       Routine feature code — lead-programmer or a language specialist.

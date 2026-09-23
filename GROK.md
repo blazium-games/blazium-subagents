@@ -5,7 +5,7 @@ How Grok should spawn and run this roster. Agents are generated from
 Prefer regenerating after mapping edits. Small extras already on origin may
 stay as targeted `agents/*.md` patches.
 
-Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**. GDScript-first. Skills live in
+Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**. GDScript-first. Skills live in
 [blazium-skills](https://github.com/blazium-games/blazium-skills). Read that
 repo's `GROK.md` first.
 

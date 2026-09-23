@@ -10,11 +10,11 @@ agents:
       Detect `project.blazium` before Godot. Surfaces: 6506 / 6507 / 6508 /
       39218 / Games cloud — never mix. Hand language work to specialists.
     description: >
-      Authority on Blazium 0.6.x vs plain Godot. project.blazium, version pin,
+      Authority on Blazium 0.8.x vs plain Godot. project.blazium, version pin,
       JustAMCP/CLI/Hub surfaces. Do not use Unity or Unreal.
     when_not: >
       Language syntax → gdscript/luau/csharp specialists. MCP connect → mcp-specialist.
-    role: You are the Blazium engine specialist. Detect Blazium before Godot. Keep 4.3.2-safe APIs.
+    role: You are the Blazium engine specialist. Detect Blazium before Godot. Keep `blazium_4.8`-safe APIs.
     handoff: Detected pin and the next specialist.
 
   blazium-gdscript-specialist:
@@ -28,7 +28,7 @@ agents:
       Compile check: editor import / Autowork. Empty C# tests are not your
       job — `--build-solutions` belongs to `blazium-csharp-specialist`.
     description: >
-      GDScript 2.0 on Blazium 4.3.2 (typing, await, signals).
+      GDScript 2.0 on Blazium 4.8.x (typing, await, signals).
     when_not: >
       New .luau or .cs files → those specialists. Scene composition → gameplay-programmer.
     role: You write and review GDScript. Default language for new Blazium work.
@@ -65,7 +65,7 @@ agents:
       C# on Blazium .NET when the project already uses it. No C# scene builders.
     when_not: >
       New scripts on a GDScript project → gdscript-specialist.
-    role: You write partial C# classes on 4.3.2 bindings. SetScript disposes wrappers; guess no enums.
+    role: You write partial C# classes on 4.8.x bindings. SetScript disposes wrappers; guess no enums.
     handoff: .cs files and --build-solutions note.
 
   blazium-shader-specialist:
@@ -79,7 +79,7 @@ agents:
       Text `.gdshader` only. Environment/post stack → technical-artist.
       JustAMCP `shader_tools` when the editor MCP is connected.
     description: >
-      Text .gdshader on Blazium 4.3.2. No Shader Graph.
+      Text .gdshader on Blazium 4.8.x. No Shader Graph.
     when_not: >
       Environment/post stack → technical-artist with environment skill.
     role: You author .gdshader files only.

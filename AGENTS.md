@@ -14,7 +14,7 @@ Junctions: `.claude/agents`, `.cursor/agents`, `.codex/agents`, `.agents/agents`
 | Agent | Use |
 |-------|-----|
 | `creative-director` | Vision, tone, pillar conflicts |
-| `technical-director` | Architecture, 4.3.2 pin, surface choice |
+| `technical-director` | Architecture, 4.8.x pin, surface choice |
 | `producer` | Coordination, review mode, smallest team |
 
 ## Tier 2 — Leads (Sonnet)

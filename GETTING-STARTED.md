@@ -1,7 +1,7 @@
 # Getting started — blazium-subagents
 
 A Blazium-only studio roster. **49 working seats** plus `blazium-orchestrator`
-and `blazium-ci-watcher`. Baseline: **Blazium 0.6.x (Godot 4.3.2 fork)**.
+and `blazium-ci-watcher`. Baseline: **Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`)**.
 
 Install [blazium-skills](https://github.com/blazium-games/blazium-skills) first
 so listed skills resolve on Claude, Cursor, Codex, and Grok. Grok host notes:

@@ -10,7 +10,7 @@ agents:
       Implements Blazium gameplay (CharacterBody, scenes, GDScript).
     when_not: >
       Physics layers → blazium-physics via you or engine-programmer. C# → csharp-specialist.
-    role: You write GDScript gameplay on 4.3.2. Compose .tscn trees; do not require C# scene builders.
+    role: You write GDScript gameplay on 4.8.x. Compose .tscn trees; do not require C# scene builders.
     handoff: Scripts/scenes changed and Autowork coverage.
 
   engine-programmer:
@@ -21,7 +21,7 @@ agents:
     pack: engine
     skills: [blazium-physics, blazium-resources, blazium-project-config, blazium-physics-tuning, blazium-camera]
     description: >
-      Core framework, physics setup, and resources on Blazium 0.6.x.
+      Core framework, physics setup, and resources on Blazium 0.8.x.
     when_not: >
       Retro compilers → toolchain-specialist. Editor MCP catalog → mcp-specialist.
     role: You own physics, resources, and project settings that gameplay sits on.
@@ -77,10 +77,10 @@ agents:
     pack: engine
     skills: [blazium-ui, blazium-game-feel]
     description: >
-      Control / Theme / HUD implementation on Blazium 4.3.2.
+      Control / Theme / HUD implementation on Blazium 4.8.x.
     when_not: >
       UX flows only → ux-designer. InputMap design → ux-designer then you.
-    role: You implement UI with Control and Theme. No UMG, UI Toolkit, or Godot 4.7-only controls.
+    role: You implement UI with Control and Theme. No UMG, UI Toolkit, or non-`blazium_4.8` controls.
     handoff: Scene paths and theme resources.
 
   technical-artist:
@@ -94,5 +94,5 @@ agents:
       Text .gdshader and WorldEnvironment on Blazium. No Shader Graph.
     when_not: >
       Sprite atlas work → art-director. Export → export-specialist.
-    role: You write .gdshader files and environment setups pinned to 4.3.2.
+    role: You write .gdshader files and environment setups pinned to 4.8.x.
     handoff: Shader/environment paths.

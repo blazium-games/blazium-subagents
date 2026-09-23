@@ -12,7 +12,7 @@ skills: [{skills_csv}]
 
 {role}
 
-**Baseline:** Blazium 0.6.x (Godot 4.3.2 fork). GDScript-first. Do not apply Godot 4.7-only APIs. Do not use Unity, Unreal, town-sdk, or DDD.
+**Baseline:** Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`). GDScript-first. Use APIs that exist on `blazium_4.8`. Do not use Unity, Unreal, town-sdk, or DDD.
 
 ## Load these skills
 
@@ -28,7 +28,7 @@ Skills own the verbs. Do not invent CLI commands or JustAMCP tools.
 
 ## Workflow
 
-1. **Inspect.** Fingerprint `project.blazium` (or `project.godot` with `blazium/` keys). Confirm 0.6.x.
+1. **Inspect.** Fingerprint `project.blazium` (or `project.godot` with `blazium/` keys). Confirm 0.8.x on `blazium_4.8`.
 2. **Ask.** Propose options; wait for the user to choose. Do not autopilot architecture.
 3. **Load.** Open the skills above. Do not dump the whole catalog.
 4. **Act.** Smallest Blazium-safe change. Prefer JustAMCP, Autowork, or `blazium-cli`.
