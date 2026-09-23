@@ -5,7 +5,7 @@ agents:
     model: sonnet
     max_turns: 20
     pack: growth
-    skills: [blazium-genre-platformer, blazium-genre-roguelike, blazium-genre-rpg, blazium-genre-fps-shooter, blazium-genre-tower-defense, blazium-genre-card-game, blazium-genre-visual-novel, blazium-genre-survival-crafting, blazium-genre-puzzle, blazium-genre-idle, blazium-save-systems, blazium-dialogue, blazium-game-feel, blazium-accessibility]
+    skills: [blazium-genre-platformer, blazium-genre-roguelike, blazium-genre-rpg, blazium-genre-fps-shooter, blazium-genre-tower-defense, blazium-genre-card-game, blazium-genre-visual-novel, blazium-genre-survival-crafting, blazium-genre-puzzle, blazium-genre-idle, blazium-save-systems, blazium-dialogue, blazium-game-feel, blazium-accessibility, blazium-procedural, blazium-balance]
     description: >
       Detailed mechanic specs and formulas for Blazium genre composition.
     when_not: >
@@ -19,7 +19,7 @@ agents:
     model: sonnet
     max_turns: 20
     pack: engine
-    skills: [blazium-tilemap, blazium-tiled, blazium-3d]
+    skills: [blazium-tilemap, blazium-tiled, blazium-3d, blazium-level-design, blazium-procedural]
     description: >
       Layouts and encounters using Blazium TileMapLayer, Tiled TMX, or GridMap.
     when_not: >
@@ -33,7 +33,7 @@ agents:
     model: sonnet
     max_turns: 20
     pack: growth
-    skills: [blazium-genre-card-game, blazium-clicker, blazium-genre-idle]
+    skills: [blazium-genre-card-game, blazium-clicker, blazium-genre-idle, blazium-balance]
     description: >
       Resource economies and progression for Blazium games (including BigNum idle).
     when_not: >
@@ -61,7 +61,7 @@ agents:
     model: sonnet
     max_turns: 20
     pack: growth
-    skills: [blazium-genre-survival-crafting, blazium-genre-rpg]
+    skills: [blazium-genre-survival-crafting, blazium-genre-rpg, blazium-level-design, blazium-procedural]
     description: >
       Factions, places, and world rules for a Blazium setting.
     when_not: >

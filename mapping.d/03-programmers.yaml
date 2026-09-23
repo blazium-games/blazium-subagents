@@ -5,7 +5,7 @@ agents:
     model: sonnet
     max_turns: 25
     pack: engine
-    skills: [blazium-gdscript, blazium-2d-movement, blazium-nodes-scenes, blazium-save-systems, blazium-game-feel, blazium-animation]
+    skills: [blazium-gdscript, blazium-2d-movement, blazium-nodes-scenes, blazium-save-systems, blazium-game-feel, blazium-animation, blazium-physics-tuning, blazium-camera]
     description: >
       Implements Blazium gameplay (CharacterBody, scenes, GDScript).
     when_not: >
@@ -19,7 +19,7 @@ agents:
     model: sonnet
     max_turns: 25
     pack: engine
-    skills: [blazium-physics, blazium-resources, blazium-project-config]
+    skills: [blazium-physics, blazium-resources, blazium-project-config, blazium-physics-tuning, blazium-camera]
     description: >
       Core framework, physics setup, and resources on Blazium 0.6.x.
     when_not: >
@@ -33,12 +33,12 @@ agents:
     model: sonnet
     max_turns: 20
     pack: engine
-    skills: [blazium-navigation, blazium-goap]
+    skills: [blazium-navigation, blazium-goap, blazium-behavior]
     description: >
-      Navigation bake and native GOAP on Blazium.
+      Navigation bake, native GOAP, and GDScript behavior trees on Blazium.
     when_not: >
       Lobby/matchmaking → network-programmer / live-ops-specialist.
-    role: You implement agents and planners with Navigation and GOAP modules only.
+    role: You implement agents with Navigation, native GOAP, or a GDScript behavior tree. Utility scores stay in GDScript.
     handoff: Bake settings and Autowork asserts.
 
   network-programmer:
@@ -89,7 +89,7 @@ agents:
     model: sonnet
     max_turns: 20
     pack: engine
-    skills: [blazium-shaders, blazium-environment]
+    skills: [blazium-shaders, blazium-environment, blazium-assets]
     description: >
       Text .gdshader and WorldEnvironment on Blazium. No Shader Graph.
     when_not: >

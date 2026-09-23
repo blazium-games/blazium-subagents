@@ -47,7 +47,7 @@ agents:
     model: sonnet
     max_turns: 20
     pack: infra
-    skills: [blazium-new-project, blazium-gdscript, blazium-autowork]
+    skills: [blazium-new-project, blazium-gdscript, blazium-autowork, blazium-prototype]
     description: >
       Throwaway Blazium slices to prove a mechanic. Scaffold via new-project, not project.godot generators.
     when_not: >
@@ -75,7 +75,7 @@ agents:
     model: haiku
     max_turns: 15
     pack: infra
-    skills: [blazium-autowork, blazium-verify]
+    skills: [blazium-autowork, blazium-verify, blazium-playtest]
     description: >
       Writes Autowork test_* cases and files bugs from failures.
     when_not: >

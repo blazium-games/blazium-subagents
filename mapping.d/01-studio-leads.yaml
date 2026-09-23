@@ -23,7 +23,7 @@ agents:
     model: sonnet
     max_turns: 20
     pack: engine
-    skills: [blazium-sprites, blazium-pixel-perfect]
+    skills: [blazium-sprites, blazium-pixel-perfect, blazium-assets]
     description: >
       Visual identity and asset standards for a Blazium project (sprites,
       pixel snap, themes). Not shader implementation.
@@ -67,7 +67,7 @@ agents:
     model: sonnet
     max_turns: 20
     pack: infra
-    skills: [blazium-autowork, blazium-verify]
+    skills: [blazium-autowork, blazium-verify, blazium-playtest]
     description: >
       Test strategy and release readiness using Autowork on Blazium.
     when_not: >
@@ -81,7 +81,7 @@ agents:
     model: sonnet
     max_turns: 20
     pack: ship
-    skills: [blazium-export, blazium-ci-export, blazium-ci-watch, blazium-games-publish, blazium-itch-publish, blazium-steam-publish]
+    skills: [blazium-export, blazium-ci-export, blazium-ci-watch, blazium-games-publish, blazium-itch-publish, blazium-steam-publish, blazium-release-checklist]
     description: >
       Builds, stores, and launch for Blazium (export, GHA, blazium.games).
     when_not: >
