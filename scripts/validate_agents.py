@@ -23,7 +23,7 @@ DEFAULT_MARKET_URL = (
 )
 FRONT = re.compile(r"^---\s*\n(.*?)\n---", re.S)
 BANNED = re.compile(
-    r"\b(Unity|Unreal|Godot 4\.7|town-sdk|DDDBrowser|Shader Graph)\b",
+    r"\b(Unity|Unreal|town-sdk|DDDBrowser|Shader Graph)\b",
     re.I,
 )
 

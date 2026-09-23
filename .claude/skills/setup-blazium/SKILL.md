@@ -17,4 +17,4 @@ godot_compat: 4.8.x
 languages: gdscript-first
 ```
 
-Do not offer Unity, Unreal, or Godot 4.7. Empty tree → `blazium-new-project`, not a `project.godot` generator.
+Use Blazium 0.8.x on `blazium_4.8`, not a stock Godot editor. Do not offer Unity or Unreal. Empty tree → `blazium-new-project`, not a `project.godot` generator.

@@ -1,7 +1,7 @@
 ---
 name: technical-director
 description: >
-  Architecture and performance strategy on Blazium 0.8.x. Pins 4.8.x, JustAMCP, Autowork, and CLI. Do not pick Unity, Unreal, or Godot 4.7.
+  Architecture and performance strategy on Blazium 0.8.x. Pins 4.8.x, JustAMCP, Autowork, and CLI. Use Blazium 0.8.x on `blazium_4.8`, not a stock Godot editor.
 tools: Read, Glob, Grep, Write, Edit
 model: opus
 maxTurns: 30

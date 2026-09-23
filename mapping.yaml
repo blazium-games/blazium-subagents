@@ -7,7 +7,7 @@ marketplace_url: https://raw.githubusercontent.com/blazium-games/blazium-skills/
 withdrawn: [blazium-town-sdk, blazium-dddbrowser]
 retired: [blazium-cli-hub, blazium-justamcp]
 unassigned: [blazium-example-analytics-server, blazium-example-crash-server, blazium-example-crash-sidecar]
-banned_products: [Unity, Unreal, "Godot 4.7", town-sdk, DDDBrowser, DDD]
+banned_products: [Unity, Unreal, town-sdk, DDDBrowser, DDD]
 
 modes:
   design:
@@ -88,7 +88,7 @@ agents:
       Hub `:39218`, Games cloud. Pin 4.8.x. Prefer Autowork evidence over docks.
     description: >
       Architecture and performance strategy on Blazium 0.8.x. Pins 4.8.x,
-      JustAMCP, Autowork, and CLI. Do not pick Unity, Unreal, or Godot 4.7.
+      JustAMCP, Autowork, and CLI. Use Blazium 0.8.x on `blazium_4.8`, not a stock Godot editor.
     when_not: >
       Routine feature code — lead-programmer or a language specialist.
     role: You own technical vision. Prefer JustAMCP, Autowork, and blazium-cli over unverified clicks.
