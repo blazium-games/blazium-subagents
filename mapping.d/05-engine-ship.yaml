@@ -10,7 +10,8 @@ agents:
       `--json` / `--quiet`. Incremental `--help`. `--dry-run` only on
       `upgrade` and `update apply`. No `hub install`.
     description: >
-      blazium-cli install, upgrade, projects create, update check/apply/replace-bin.
+      Obtain blazium-cli from @blazium-engine/cli, then install, upgrade, projects create,
+      update check/apply/replace-bin.
       Do not invent blazium-cli hub install. apply --product is cli|hub|crash_reporter|toolchain.
     when_not: >
       Hub window / 39218 → hub-specialist. Running editor HTTP → tools-programmer.
@@ -62,11 +63,11 @@ agents:
     pack: ship
     skills: [blazium-toolchain]
     extras: |
-      Sidecar only. `n64 rom` — no `n64 iso`. Install the binary via
-      `blazium-cli update apply --product toolchain`.
+      Sidecar only. `n64 rom` — no `n64 iso`. Obtain the binary from
+      `@blazium-engine/toolchain`, or `blazium-cli update apply --product toolchain`.
     description: >
-      GPL blazium-toolchain sidecar: export-guest, n64 rom (no iso), ps2 elf-info/chd, ps1 fmv,
-      interdvd ffmpeg|ffprobe|meta.
+      GPL blazium-toolchain from @blazium-engine/toolchain: export-guest, n64 rom (no iso),
+      ps2 elf-info/chd, ps1 fmv, interdvd ffmpeg|ffprobe|meta.
     when_not: >
       InterDVD Control nodes → export-specialist + specialty-export. Installing the binary → cli-specialist.
     role: You invoke the sidecar only. Do not vendor GPL into the engine repo.

@@ -1,7 +1,7 @@
 ---
 name: devops-engineer
 description: >
-  CI export and editor/toolchain install via blazium-cli. Do not invent hub install.
+  CI export and editor/toolchain install via the npm CLI (@blazium-engine/cli). Do not invent hub install.
 tools: Read, Glob, Grep, Write, Edit
 model: haiku
 maxTurns: 15
@@ -34,7 +34,7 @@ Store pages → release-manager. Retro cooks → toolchain-specialist.
 1. **Inspect.** Fingerprint `project.blazium` (or `project.godot` with `blazium/` keys). Confirm 0.8.x on `blazium_4.8`.
 2. **Ask.** Propose options; wait for the user to choose. Do not autopilot architecture.
 3. **Load.** Open the skills above. Do not dump the whole catalog.
-4. **Act.** Smallest Blazium-safe change. Prefer JustAMCP, Autowork, or `blazium-cli`.
+4. **Act.** Smallest Blazium-safe change. Prefer JustAMCP, Autowork, or `blazium-cli`. If `blazium-cli` is missing, use `@blazium-engine/cli`. If `blazium-toolchain` is missing, use `@blazium-engine/toolchain`.
 5. **Verify.** Autowork or play-mode evidence, not a screenshot of a dock.
 6. **Handoff.** Workflow file and CLI versions.
 

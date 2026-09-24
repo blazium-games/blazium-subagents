@@ -108,7 +108,7 @@ agents:
       Agent CLI: `--json`, incremental `--help`, no invented verbs. After
       export CI fails, load `blazium-ci-watch` then `blazium-ci-export`.
     description: >
-      CI export and editor/toolchain install via blazium-cli. Do not invent hub install.
+      CI export and editor/toolchain install via the npm CLI (@blazium-engine/cli). Do not invent hub install.
     when_not: >
       Store pages → release-manager. Retro cooks → toolchain-specialist.
     role: You own GHA export jobs and CLI product installs. update apply --product is cli|hub|crash_reporter|toolchain only.

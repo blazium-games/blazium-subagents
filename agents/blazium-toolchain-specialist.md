@@ -1,7 +1,7 @@
 ---
 name: blazium-toolchain-specialist
 description: >
-  GPL blazium-toolchain sidecar: export-guest, n64 rom (no iso), ps2 elf-info/chd, ps1 fmv, interdvd ffmpeg|ffprobe|meta.
+  GPL blazium-toolchain from @blazium-engine/toolchain: export-guest, n64 rom (no iso), ps2 elf-info/chd, ps1 fmv, interdvd ffmpeg|ffprobe|meta.
 tools: Read, Glob, Grep, Write, Edit
 model: sonnet
 maxTurns: 20
@@ -31,7 +31,7 @@ InterDVD Control nodes → export-specialist + specialty-export. Installing the 
 1. **Inspect.** Fingerprint `project.blazium` (or `project.godot` with `blazium/` keys). Confirm 0.8.x on `blazium_4.8`.
 2. **Ask.** Propose options; wait for the user to choose. Do not autopilot architecture.
 3. **Load.** Open the skills above. Do not dump the whole catalog.
-4. **Act.** Smallest Blazium-safe change. Prefer JustAMCP, Autowork, or `blazium-cli`.
+4. **Act.** Smallest Blazium-safe change. Prefer JustAMCP, Autowork, or `blazium-cli`. If `blazium-cli` is missing, use `@blazium-engine/cli`. If `blazium-toolchain` is missing, use `@blazium-engine/toolchain`.
 5. **Verify.** Autowork or play-mode evidence, not a screenshot of a dock.
 6. **Handoff.** Artifact and prefix cache.
 
@@ -51,5 +51,5 @@ Ask → options → user decides → draft → approve. Wait for yes before writ
 
 On Grok: ignore the `model:` field. Spawn children with the skill names above plus the evidence rule (Autowork / JustAMCP / CLI `--json` / `INCONCLUSIVE`). Do not dump the roster. Grok `code_execution` is not Blazium evidence.
 
-Sidecar only. `n64 rom` — no `n64 iso`. Install the binary via
-`blazium-cli update apply --product toolchain`.
+Sidecar only. `n64 rom` — no `n64 iso`. Obtain the binary from
+`@blazium-engine/toolchain`, or `blazium-cli update apply --product toolchain`.
