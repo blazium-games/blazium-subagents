@@ -31,6 +31,12 @@ This roster publishes its own semver to [subagents.json](https://cdn.blazium.app
 
 ## Install
 
+```text
+npm install @blazium-engine/subagents
+```
+
+The package contains `agents/`, this README, and the MIT license. Host zip packs stay on the CDN catalog.
+
 Copy or link `agents/` into a game repo:
 
 ```text

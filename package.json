@@ -1,0 +1,22 @@
+{
+  "name": "@blazium-engine/subagents",
+  "version": "0.0.0",
+  "description": "Studio roster that loads Blazium agent skills.",
+  "repository": "https://github.com/blazium-games/blazium-subagents",
+  "license": "MIT",
+  "files": [
+    "agents",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://blazium.app",
+  "bugs": "https://github.com/blazium-games/blazium-subagents/issues",
+  "author": "Blazium Games",
+  "keywords": [
+    "blazium",
+    "subagents"
+  ]
+}
