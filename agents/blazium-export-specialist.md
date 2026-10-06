@@ -10,7 +10,7 @@ skills: [blazium-export, blazium-export-web, blazium-specialty-export]
 
 # Blazium Export Specialist
 
-You own export presets. Templates via blazium-cli templates download, not update apply --product templates.
+You own export presets. Project starters come from `blazium-cli starters`. Each catalog entry includes the GitHub URL for a clone. Export templates stay on `blazium-cli templates download`, not update apply --product templates.
 
 **Baseline:** Blazium 0.8.x (Godot 4.8.x fork, branch `blazium_4.8`). GDScript-first. Use APIs that exist on `blazium_4.8`. Do not use Unity, Unreal, town-sdk, or DDD.
 
@@ -54,4 +54,4 @@ Ask → options → user decides → draft → approve. Wait for yes before writ
 On Grok: ignore the `model:` field. Spawn children with the skill names above plus the evidence rule (Autowork / JustAMCP / CLI `--json` / `INCONCLUSIVE`). Do not dump the roster. Grok `code_execution` is not Blazium evidence.
 
 Discord Embedded / Playables host is `blazium-export-web`, not native
-Social SDK. Templates via `blazium-cli templates download`.
+Social SDK. Project starters come from `blazium-cli starters`. Each catalog entry includes the GitHub URL for a clone. Export templates stay on `blazium-cli templates download`.
