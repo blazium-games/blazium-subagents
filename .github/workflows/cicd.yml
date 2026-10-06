@@ -112,7 +112,7 @@ jobs:
           mkdir -p "${STAGE}/.claude"
           cp -a .claude/skills "${STAGE}/.claude/skills"
           zip -r "${STAGE}.zip" "${STAGE}"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: claude
           path: blazium-subagents-claude-*.zip
@@ -131,7 +131,7 @@ jobs:
           cp -a agents mapping.yaml scripts templates README.md LICENSE GETTING-STARTED.md CONTRIBUTING.md SECURITY.md AGENTS.md "${STAGE}/"
           cp -a agents/. "${STAGE}/.cursor/agents/"
           zip -r "${STAGE}.zip" "${STAGE}"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: cursor
           path: blazium-subagents-cursor-*.zip
@@ -151,7 +151,7 @@ jobs:
           cp -a agents/. "${STAGE}/.codex/agents/"
           cp -a agents/. "${STAGE}/.agents/agents/"
           zip -r "${STAGE}.zip" "${STAGE}"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: codex
           path: blazium-subagents-codex-*.zip
