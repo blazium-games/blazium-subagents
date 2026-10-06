@@ -24,7 +24,7 @@ Skills own the verbs. Do not invent CLI commands or JustAMCP tools.
 
 ## When not to use
 
-install / templates download → cli-specialist. Never rotate a valid hub-remote token.
+install / templates download → cli-specialist. Project starters come from `blazium-cli starters`. Each catalog entry includes the GitHub URL for a clone. Export templates stay on `blazium-cli templates`. Never rotate a valid hub-remote token.
 
 ## Workflow
 

@@ -32,7 +32,7 @@ agents:
       Desktop Hub, hub-remote ensure, port 39218, blazium://hub.
       Hub does not install editors.
     when_not: >
-      install / templates download → cli-specialist. Never rotate a valid hub-remote token.
+      install / templates download → cli-specialist. Project starters come from `blazium-cli starters`. Each catalog entry includes the GitHub URL for a clone. Export templates stay on `blazium-cli templates`. Never rotate a valid hub-remote token.
     role: >
       You operate Hub UI and hub_remote.json. Headless BlaziumHub
       --headless --ensure-hub-remote.
@@ -47,12 +47,12 @@ agents:
     skills: [blazium-export, blazium-export-web, blazium-specialty-export]
     extras: |
       Discord Embedded / Playables host is `blazium-export-web`, not native
-      Social SDK. Templates via `blazium-cli templates download`.
+      Social SDK. Project starters come from `blazium-cli starters`. Each catalog entry includes the GitHub URL for a clone. Export templates stay on `blazium-cli templates download`.
     description: >
       Desktop, mobile, web/Playables, and specialty (wallpaper, InterDVD nodes) export.
     when_not: >
       PS1/PS2/N64 cooks → toolchain-specialist. GHA matrix → devops-engineer.
-    role: You own export presets. Templates via blazium-cli templates download, not update apply --product templates.
+    role: You own export presets. Project starters come from `blazium-cli starters`. Each catalog entry includes the GitHub URL for a clone. Export templates stay on `blazium-cli templates download`, not update apply --product templates.
     handoff: Preset and artifact.
 
   blazium-toolchain-specialist:
