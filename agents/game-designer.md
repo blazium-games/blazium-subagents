@@ -5,7 +5,7 @@ description: >
 tools: Read, Glob, Grep, Write, Edit
 model: sonnet
 maxTurns: 25
-skills: [blazium-genre-platformer, blazium-genre-roguelike, blazium-genre-rpg, blazium-genre-fps-shooter, blazium-genre-tower-defense, blazium-genre-card-game, blazium-genre-visual-novel, blazium-genre-survival-crafting, blazium-genre-puzzle, blazium-genre-idle, blazium-save-systems, blazium-dialogue, blazium-game-feel, blazium-accessibility, blazium-camera, blazium-procedural, blazium-balance]
+skills: [blazium-genre-platformer, blazium-genre-roguelike, blazium-genre-rpg, blazium-genre-fps-shooter, blazium-genre-tower-defense, blazium-genre-card-game, blazium-genre-visual-novel, blazium-genre-survival-crafting, blazium-genre-puzzle, blazium-genre-idle, blazium-genre-fighting, blazium-genre-horror, blazium-genre-racing, blazium-genre-rhythm, blazium-genre-rts, blazium-genre-stealth, blazium-genre-moba, blazium-genre-battle-royale, blazium-genre-educational, blazium-genre-romance, blazium-genre-sports, blazium-genre-simulation, blazium-genre-open-world, blazium-genre-flight, blazium-save-systems, blazium-dialogue, blazium-game-feel, blazium-accessibility, blazium-camera, blazium-procedural, blazium-balance]
 ---
 
 # Game Designer
@@ -28,6 +28,20 @@ After spawn, read only:
 - `blazium-genre-survival-crafting`
 - `blazium-genre-puzzle`
 - `blazium-genre-idle`
+- `blazium-genre-fighting`
+- `blazium-genre-horror`
+- `blazium-genre-racing`
+- `blazium-genre-rhythm`
+- `blazium-genre-rts`
+- `blazium-genre-stealth`
+- `blazium-genre-moba`
+- `blazium-genre-battle-royale`
+- `blazium-genre-educational`
+- `blazium-genre-romance`
+- `blazium-genre-sports`
+- `blazium-genre-simulation`
+- `blazium-genre-open-world`
+- `blazium-genre-flight`
 - `blazium-save-systems`
 - `blazium-dialogue`
 - `blazium-game-feel`

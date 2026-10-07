@@ -5,7 +5,7 @@ description: >
 tools: Read, Glob, Grep, Write, Edit
 model: sonnet
 maxTurns: 20
-skills: [blazium-router, blazium-project-config]
+skills: [blazium-router, blazium-project-config, blazium-version-migration]
 ---
 
 # Blazium Specialist
@@ -20,6 +20,7 @@ After spawn, read only:
 
 - `blazium-router`
 - `blazium-project-config`
+- `blazium-version-migration`
 
 Skills own the verbs. Do not invent CLI commands or JustAMCP tools.
 
