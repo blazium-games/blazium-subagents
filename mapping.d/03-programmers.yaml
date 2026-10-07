@@ -19,7 +19,7 @@ agents:
     model: sonnet
     max_turns: 25
     pack: engine
-    skills: [blazium-physics, blazium-resources, blazium-project-config, blazium-physics-tuning, blazium-camera]
+    skills: [blazium-physics, blazium-resources, blazium-project-config, blazium-physics-tuning, blazium-camera, blazium-gdextension]
     description: >
       Core framework, physics setup, and resources on Blazium 0.8.x.
     when_not: >

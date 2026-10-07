@@ -23,6 +23,7 @@ jobs:
       - name: Generate and validate
         env:
           BLAZIUM_SKILLS_MARKETPLACE: https://raw.githubusercontent.com/blazium-games/blazium-skills/main/.claude-plugin/marketplace.json
+          BLAZIUM_SKILLS_MARKETPLACE_FALLBACK: https://raw.githubusercontent.com/blazium-games/blazium-skills/justamcp-agent-gaps/.claude-plugin/marketplace.json
         run: |
           python scripts/generate_agents.py
           python scripts/validate_agents.py

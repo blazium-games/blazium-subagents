@@ -5,7 +5,7 @@ description: >
 tools: Read, Glob, Grep, Write, Edit
 model: sonnet
 maxTurns: 25
-skills: [blazium-physics, blazium-resources, blazium-project-config, blazium-physics-tuning, blazium-camera]
+skills: [blazium-physics, blazium-resources, blazium-project-config, blazium-physics-tuning, blazium-camera, blazium-gdextension]
 ---
 
 # Engine Programmer
@@ -23,6 +23,7 @@ After spawn, read only:
 - `blazium-project-config`
 - `blazium-physics-tuning`
 - `blazium-camera`
+- `blazium-gdextension`
 
 Skills own the verbs. Do not invent CLI commands or JustAMCP tools.
 
