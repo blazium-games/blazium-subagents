@@ -118,6 +118,11 @@ def main() -> int:
         published: set[str] = set()
     else:
         published = published_skills(catalog)
+    fallback = (os.environ.get("BLAZIUM_SKILLS_MARKETPLACE_FALLBACK") or "").strip()
+    if fallback:
+        extra_catalog = _load_json_url(fallback) if fallback.startswith("http://") or fallback.startswith("https://") else _load_json_file(Path(fallback))
+        if extra_catalog is not None:
+            published |= published_skills(extra_catalog)
 
     withdrawn = set(data.get("withdrawn") or [])
     retired = set(data.get("retired") or [])
